@@ -28,7 +28,7 @@
     .nav-wrapper {
         width: 100vw;
         height: 64px;
-        background-color: white;
+        background-color: black;
         display: flex;
         top: 0;
         left: 0;
@@ -42,6 +42,7 @@
     .logo {
         font-size: 32px;
         font-weight: 700;
+        color: white;
     }
     
     .links {
@@ -58,8 +59,8 @@
         padding: 0 20px;
         text-decoration: none;
         font-size: 22px;
-        color: black;
-        border-bottom: 10px solid transparent;
+        color: white;
+        border-bottom: 5px solid transparent;
         /* HIDING THE CURSOR ON THE A ELEMENT SINCE BY DEFAULT IT CAN CHANCE THE CURSOR
         WHEN HOVER ON */
         cursor: none;
@@ -68,7 +69,7 @@
     }
     
     a.link:hover {
-        border-bottom-color: blue;
+        border-bottom-color: white;
     }
     
     a.link:last-child {
