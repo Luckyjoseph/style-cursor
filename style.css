@@ -1,0 +1,123 @@
+    /* REMOVING PADDING AND MARGIN FROM ALL ELEMENTS
+    AND SETTING BOX SIZING TO BORDER-BOX SO THAT BORDER 
+    AND PADDING DOES NOT AFFECT OUR SIZING */
+    
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+        /* DUE TO THE CURSOR, HIDE THE OVERFLOW ON THE Y AXIS IF THE 
+        CUROSR GOES OUT */
+        overflow-y: hidden;
+        /* HIDES THE CURSOR SO THAT OUR CUSTOM CURSOR IS SHOWN */
+        cursor: none;
+    }
+    /* MAKING OUR CONTAINER TO TAKE THE WHOLE PARENT (BODY) */
+    
+    .container {
+        height: 100%;
+        width: 100%;
+    }
+    /* STYLING THE NAVIGATION BAR */
+    
+    .nav-wrapper {
+        width: 100vw;
+        height: 64px;
+        background-color: white;
+        display: flex;
+        top: 0;
+        left: 0;
+        line-height: 64px;
+        padding: 0 30px;
+        padding-right: 0;
+        border-bottom: 1px solid black;
+    }
+    /* STYING THE .LOGO ELEMENT IN THE NAV-WRAPPER */
+    
+    .logo {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    
+    .links {
+        display: flex;
+        margin-left: auto;
+    }
+    
+    a.link {
+        /* SETTING THE HIEGHT TO 1PX MORE THAN THE NAV-WRAPPER HIEGHT,
+        SO THAT THE BORDER STARTS AT THE SAME HIEGHT AS THE NAV-WRAPPER */
+        height: calc(100% + 1px);
+        /* FORCING THE TEXT TO STAY IN THE MIDDLE OF TH A LINK ELEMENT */
+        line-height: 64px;
+        padding: 0 20px;
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+        border-bottom: 10px solid transparent;
+        /* HIDING THE CURSOR ON THE A ELEMENT SINCE BY DEFAULT IT CAN CHANCE THE CURSOR
+        WHEN HOVER ON */
+        cursor: none;
+        transition: 250ms;
+        transform-origin: top left;
+    }
+    
+    a.link:hover {
+        border-bottom-color: blue;
+    }
+    
+    a.link:last-child {
+        padding-right: 40px;
+    }
+    /* STYLING OUR CUSTOM CURSOR */
+    
+    .cursor {
+        position: fixed;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        border: 2px solid black;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        cursor: none;
+        mix-blend-mode: difference;
+        background-color: transparent;
+        transition: border 150ms;
+    }
+    /* STYLING THE INNER CUSTOM CURSOR  */
+    
+    .inner-cursor {
+        position: fixed;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        cursor: none;
+        mix-blend-mode: difference;
+        z-index: 1100;
+        background-color: black;
+        transition: all 10ms ease-in-out, width 250ms linear, height 250ms linear;
+    }
+    /* STYYING THE INNER CURSOR WHEN THE NAV-WRAPPER IS HOVER ON */
+    
+    .nav-wrapper:hover~.inner-cursor {
+        background-color: white;
+        border-color: white;
+        width: 37px;
+        height: 37px;
+    }
+    /* STYYING THE CURSOR WHEN THE NAV-WRAPPER IS HOVER ON */
+    
+    .nav-wrapper:hover+.cursor {
+        border-color: white;
+    }
